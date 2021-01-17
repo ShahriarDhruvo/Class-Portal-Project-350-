@@ -1,4 +1,5 @@
 .header {
+  
   width: 100%;
   height: 35vh;
   background: hsla(278, 100%, 68%, 1);
@@ -12,6 +13,8 @@
   background-repeat: no-repeat;
   background-size: contain, 100%;
   &__text {
+    
+    font-style: bold;
     display: none;
   }
 }
@@ -29,11 +32,13 @@
     &__heading {
       width: 50%;
       font-size: 3.5vw;
-      font-family: 'Josefin Sans', sans-serif;
+      font-style: bold;
+      font-family: 'Josefin Sans', monospace;
   }
   &__intro {
     font-size: 1.3vw;
-    font-family: 'Open Sans', sans-serif;
+    font-style: bold;
+    font-family: 'Open Sans', monospace;
   }
   }
 }
