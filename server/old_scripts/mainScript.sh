@@ -25,19 +25,7 @@ m_message "
 2. Then reboot
 3. After that run: sh mainScript.sh
 4. Reboot again (Please manually do this as this one will not prompt you to do so like other scripts do in this list...)
-5. And lastly run: sh postScript.sh
-6. Then reboot again
-And........then you are done....... :)"
-
-while true; do
-	conf_message "install necessary tools" 
-    read -p "" yn
-    case $yn in
-        [Yy]*|"" )
-			message "running update again for safety measures :)"
-			yay -Syyu
-
-			message "installing necessary tools"
+5. And lastly run:
 			# yay -S intellij #This seems to be depricated
 			# yay -S base-devel zsh vim neofetch google-chrome brave vlc code qbittorrent xdman handbrake sublime-text gimp libreoffice-still mlocate timeshift
 	       	yay -S - < softwares_and_tools.txt

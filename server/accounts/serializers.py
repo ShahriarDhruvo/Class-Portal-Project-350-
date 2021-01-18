@@ -37,9 +37,6 @@ class CustomRegisterSerializer(RegisterSerializer):
         (Student, 'Student')
     ]
 
-    department = serializers.PrimaryKeyRelatedField(
-        queryset=Department.objects, allow_null=True)
-    university = serializers.PrimaryKeyRelatedField(
         queryset=University.objects, required=True)
     reg_no = serializers.IntegerField(min_value=0, allow_null=True)
     status = serializers.ChoiceField(choices=STATUS_CHOICES)

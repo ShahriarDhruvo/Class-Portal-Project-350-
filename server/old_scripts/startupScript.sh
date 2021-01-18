@@ -22,29 +22,7 @@ conf_message()
 
 m_message "
 1. First run: sh startupScript.sh
-2. Then reboot
-3. After that run: sh mainScript.sh
-4. Reboot again (Please manually do this as this one will not prompt you to do so like other scripts do in this list...)
-5. And lastly run: sh postScript.sh
-6. Then reboot again
-And........then you are done....... :)"
-
-# Enable AUR 
-sudo sed --in-place "s/#EnableAUR/EnableAUR/" "/etc/pamac.conf"
-
-# Git configuration
-# message "setting global email and username for github 
-# (Edit this script to change your email and username for github by default it is set up as the developer's credential)"
-
-# git config --global user.email "shahriarelahi3062@gmail.com"
-# git config --global user.name "ShahriarDhruvo"
-
-# while true; do
-# 	conf_message "update default timeout" 
-#     read -p "" yn
-#     case $yn in
-#         [Yy]*|"" )
-# 			message "updating default timeout to 30 minutes"
+2. Then reboo
 # 			sudo echo "Defaults passwd_timeout=30" >> /etc/sudoers
 # 	       	break;;
 #         [Nn]* ) break;;
