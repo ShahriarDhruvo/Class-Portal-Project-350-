@@ -32,6 +32,19 @@ input[type="checkbox"]:checked {
 //     font-family: "MuseoModerno";
 // }
 
+    transition: background-color 4000s ease-in-out 0s;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+input[type="checkbox"] {
+    opacity: 0.5;
+}
+
+input[type="checkbox"]:checked {
+    opacity: 1;
 .ccard {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12);
     border-radius: 0.65rem;

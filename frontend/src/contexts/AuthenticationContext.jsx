@@ -21,6 +21,12 @@ const AuthenticationContextProvider = (props) => {
 
         const response = await fetch(API_URL, {
             method: "POST",
+            
+
+    const handleLogOut = async () => {
+        const API_URL = "/api/v1/accounts/logout/";
+
+        const response = await fetch(API_URL, {
         });
 
         if (response.ok) {
