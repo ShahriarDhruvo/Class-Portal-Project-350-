@@ -1,0 +1,97 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:700,900");
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+// Colors
+$main: #2980b9;
+$main-dark: #feca57;
+$facebook: #405d9d;
+$twitter: #00acee;
+$success-dark: #8cfac7;
+$hover: #ecf0f1;
+$hover-dark: #cecece1f;
+$remove: #eb858e;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+    (
+        "main": $main,
+        "remove": $remove,
+        "twitter": $twitter,
+        "facebook": $facebook,
+        "main-dark": $main-dark,
+        "success-dark": $success-dark,
+    ),
+    $theme-colors
+);
+
+// Spacing
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge(
+    (
+        6: (
+            $spacer * 6,
+        ),
+        7: (
+            $spacer * 18,
+        ),
+    ),
+    $spacers
+);
+
+// Others
+$hoverShade: 8%;
+
+// Settings
+// Mobile view
+@media screen and (min-width: 901px) {
+    .amount {
+        font-size: 1.15rem;
+    }
+    .logo-text {
+        font-family: "MuseoModerno";
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    * {
+        font-size: 0.95rem;
+    }
+    .amount-label {
+        font-size: 0.95rem;
+    }
+    .amount {
+        font-size: 1.1rem;
+    }
+    .cart-header {
+        font-size: 1.125rem;
+    }
+    // #cart-table {
+    //     font-size: 0.8rem !important;
+    // }
+    .logo-text {
+        font-family: "MuseoModerno";
+        font-size: 2rem;
+    }
+}
+
+// Prevent default input number style
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}

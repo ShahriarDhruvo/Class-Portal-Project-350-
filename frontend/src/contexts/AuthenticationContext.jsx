@@ -17,15 +17,20 @@ const AuthenticationContextProvider = (props) => {
     };
 
     const handleLogOut = async () => {
-        const API_URL = "/api/v1/accounts/logout/";
+        const API_URL =
+            localStorage.getItem("isServiceProvider") === "true"
+                ? "/servicelogout/"
+                : "/logout/";
 
         const response = await fetch(API_URL, {
-            method: "POST",
+            method: "GET",
         });
 
         if (response.ok) {
-            localStorage.clear();
-            window.location.replace("/");
+            handleAuthentication("");
+            localStorage.setItem("userID", "");
+            localStorage.setItem("username", "");
+            window.location.replace("/login");
         }
     };
 
