@@ -1,0 +1,11 @@
+{% extends "blog/base.html" %}
+{%load static%}
+{% block content %}
+	<h1>
+		My Favourite
+	</h1>
+	<p style="color: red">
+		<em>Cat Burgler Nami</em>
+    </p>
+	<img src="{% static 'blog/nami.jpg' %}" width="505" height="605" >
+{% endblock content %}
