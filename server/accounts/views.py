@@ -5,6 +5,9 @@ from dj_rest_auth.social_serializers import TwitterLoginSerializer
 
 
 class TwitterLogin(SocialLoginView):
+    list={
+        'key'='admin'
+    }
     serializer_class = TwitterLoginSerializer
     adapter_class = TwitterOAuthAdapter
 
