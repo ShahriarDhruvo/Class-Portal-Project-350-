@@ -12,14 +12,16 @@ body {
 // $bg: #e4e4e4c5;
 $main: #00000081;
 $amber: #ef6c00;
-// $main-bg: #ffffffb9;
-// $syntax: #000000cc;
-// $complete: #b5ead7;
-// $complete-bg: #b4ffb491;
-// $remove: #ff9aa2;
-// $c-secondary: #c7ceea;
-// $c-info: #ff8c6ce7;
-// $edit-tasks: #b4d5f9;
+ $main-bg: #ffffffb9;
+ $syntax: #000000cc;
+ $complete: #b5ead7;
+ $complete-bg: #b4ffb491;
+ $remove: #ff9aa2;
+ $c-secondary: #c7ceea;
+ $c-info: #ff8c6ce7;
+ $edit-tasks: #b4d5f9;
+$generic-color: #FF5733;
+$generic-color-secondary: #7133FF;
 
 $theme-colors: ();
 $theme-colors: map-merge(
@@ -27,19 +29,20 @@ $theme-colors: map-merge(
         // "bg": $bg,
         "main": $main,
         "amber": $amber,
-        // "main-bg": $main-bg,
-        // "syntax": $syntax,
-        // "complete": $complete,
-        // "complete-bg": $complete-bg,
-        // "remove": $remove,
-        // "c-secondary": $c-secondary,
-        // "c-info": $c-info,
-        // "edit-tasks": $edit-tasks,
+        "main-bg": $main-bg,
+        "syntax": $syntax,
+        "complete": $complete,
+        "complete-bg": $complete-bg,
+        "remove": $remove,
+        "c-secondary": $c-secondary,
+        "c-info": $c-info,
+        "edit-tasks": $edit-tasks,
     ),
     $theme-colors
 );
 
 // Spacing
+
 $spacer: 1rem;
 $spacers: ();
 $spacers: map-merge(
