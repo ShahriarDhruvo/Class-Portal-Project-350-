@@ -1,50 +1,119 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import "./assets/styles/styles.scss";
-
-import Home from "./pages/home";
-import ServiceProviders from "./pages/serviceProviders";
-import ShoppingCart from "./pages/shoppingCart";
-
+import "./styles/styles.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import UserRegistration from "./pages/userRegistration";
-import UserLogin from "./pages/userLogin";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import Home from "./components/Home/Home";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import EmailConfirmationSent from "./components/generic/EmailConfirmationSent";
+import EmailConfirm from "./components/generic/EmailConfirm";
+import NotFound from "./components/generic/NotFound";
+import PasswordReset from "./components/generic/PasswordReset";
+import Profile from "./components/Authentication/Profile";
+import PasswordChange from "./components/generic/PasswordChange";
+import Rooms from "./components/Rooms/Rooms";
 import AuthenticationContextProvider from "./contexts/AuthenticationContext";
-import Profile from "./pages/Profile";
-import CheckoutPage from "./pages/CheckoutPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import TestPage from "./test/TestPage";
+import SettingsContextProvider from "./contexts/SettingsContext";
+import Navs from "./components/Navbar/Navbar";
+import Dept from "./components/Dept/Dept";
+import CreateCourse from "./components/CreateCourse/CreateCourse";
+// import Notifications from "./components/Notifications/Notifications";
+import MyRooms from "./components/My_Rooms/MyRooms";
 
-library.add(far, fas);
+import Simulation from "./Simulations/Simulation";
+// import FooterPage from "./components/Footer/Footer";
+// import Footer from "./components/generic/Footer";
 
-function App() {
+import Footer from "./components/Footer/Footer";
+import SimulationSubjects from "./Simulations/SimulationSubjects";
+import BiologySimulations from "./Simulations/BiologySimulations";
+import PhysicsSimulations from "./Simulations/PhysicsSimulations";
+import ChemistrySimulations from "./Simulations/ChemistrySimulations";
+
+library.add(far, fas, fab);
+
+const App = () => {
     return (
         <Router>
-            <AuthenticationContextProvider>
-                <Switch>
-                    <Route
-                        path="/service-provider/:id"
-                        component={ServiceProviders}
-                    />
-                    <Route exact path="/cart" component={ShoppingCart} />
-                    <Route exact path="/checkout" component={CheckoutPage} />
-                    <Route
-                        exact
-                        path="/registration"
-                        component={UserRegistration}
-                    />
-                    <Route exact path="/login" component={UserLogin} />
-                    <Route exact path="/profile" component={Profile} />
-                    <Route exact path="/test" component={TestPage} />
-                    <Route exact path="/" component={Home} />
-                    <Route component={NotFoundPage} />
-                </Switch>
-            </AuthenticationContextProvider>
+            <SettingsContextProvider>
+                <AuthenticationContextProvider>
+                    <Navs />
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route
+                            exact
+                            path="/rooms/:room_pk/"
+                            component={Rooms}
+                        />
+                        <Route exact path="/myrooms/" component={MyRooms} />
+                        <Route exact path="/homerooms/:id/" component={Dept} />
+                        <Route
+                            exact
+                            path="/password/reset/"
+                            component={PasswordReset}
+                        />
+                        <Route
+                            exact
+                            path="/password/change/"
+                            component={PasswordChange}
+                        />
+                        <Route exact path="/profile/" component={Profile} />
+                        <Route
+                            exact
+                            path="/email/confirmation/sent/:email/"
+                            component={EmailConfirmationSent}
+                        />
+                        <Route
+                            exact
+                            path="/email/confirmation/:key/"
+                            component={EmailConfirm}
+                        />
+
+                        {/* <Route
+                            exact
+                            path="/notifications"
+                            component={Notifications}
+                        /> */}
+
+                        <Route
+                            exact
+                            path="/simulation"
+                            component={SimulationSubjects}
+                        />
+
+                        <Route
+                            exact
+                            path="/simulation/biology/"
+                            component={BiologySimulations}
+                        />
+
+                        <Route
+                            exact
+                            path="/simulation/biology/cell/simulation/"
+                            component={Simulation}
+                        />
+
+                        <Route
+                            exact
+                            path="/simulation/physics/"
+                            component={PhysicsSimulations}
+                        />
+
+                        <Route
+                            exact
+                            path="/simulation/chemistry/"
+                            component={ChemistrySimulations}
+                        />
+
+                        <Route component={NotFound} />
+                    </Switch>
+                    <CreateCourse />
+                </AuthenticationContextProvider>
+            </SettingsContextProvider>
+            <Footer />
         </Router>
     );
-}
+};
 
 export default App;
