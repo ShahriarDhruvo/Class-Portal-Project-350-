@@ -24,5 +24,7 @@ Frontend: <br />
   &nbsp;&nbsp;&nbsp;&nbsp; a. ReactJS <br />
   &nbsp;&nbsp;&nbsp;&nbsp; b. React-Bootstrap, Material UI <br />
   &nbsp;&nbsp;&nbsp;&nbsp; c. Moment <br />
+  &nbsp;&nbsp;&nbsp;&nbsp; d. Html & CSS <br />
   &nbsp;&nbsp;&nbsp;&nbsp; etc... <br />
+  
 
